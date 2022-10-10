@@ -1,6 +1,7 @@
+/* eslint-disable indent */
 /* eslint-disable no-console */
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useSelector } from 'react-redux';
 
 import { Error, Loader, SongCard } from '../components';
@@ -11,16 +12,19 @@ const AroundYou = () => {
   const [loading, setLoading] = useState('');
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const { data, isFetching, error } = useGetSongsByCountryQuery(country);
-
   useEffect(() => {
-    axios.get('https://geo.ipify.org/api/v2/country?apiKey=at_Dw4QSicpLrN4cE6qBFmQEoXxOYF15')
-      .then((res) => setCountry(res?.data?.location?.country))
+    axios
+      .get('https://geo.ipify.org/api/v2/country?apiKey=at_Dw4QSicpLrN4cE6qBFmQEoXxOYF15')
+    //   .get('http://api.ipstack.com/1.187.249.107?access_key=b0710e0bb90ca0b290b027746400c5bf')
+      .then((res) => {
+        setCountry(res?.data?.location?.country);
+      })
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
-  }, [country]);
+    }, [country]);
 
   if (isFetching && loading) return <Loader title="Loading songs around you" />;
-  if (error && country) return <Error />;
+  if (error && country !== '') return <Error />;
 
   return (
     <div className="flex flex-col">
