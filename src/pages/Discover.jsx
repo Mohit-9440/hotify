@@ -31,10 +31,9 @@ const Discover = () => {
     
     return (
         <div className='flex flex-col'>
-            <div className='w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10'>
-                <h2 className='font-bold text-3xl text-white text-left'>Discover {genreTitle}</h2>
-                {/* <BasicSelect menuItems={genres} /> */}
-                <select className="select w-1/5 max-w-xs"
+            <div className='w-full flex justify-between items-center flex-row mt-4 mb-10'>
+                <div className='font-bold text-xl text-white text-left'>Discover {genreTitle}</div>
+                <select className="select max-sm:w-2/5 sm:w-1/5 max-w-xs"
                     onChange={(e) => dispatch(selectGenreListId(e.target.value))}
                     value={genreListId || 'pop'}
                 >

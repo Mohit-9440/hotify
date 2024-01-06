@@ -36,7 +36,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
       </div>
 
       <div className="mt-4 flex flex-col">
-        <p className="font-semibold text-lg text-white truncate">
+        <p className="font-semibold text-sm sm:text-lg text-white truncate">
           <Link to={`/songs/${song?.key}`}>
             {song.title}
           </Link>
