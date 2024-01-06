@@ -1,0 +1,15 @@
+.basic-select {
+    background-color: #000 !important;
+    border-radius: 4px !important;
+    color: white !important;
+  }
+  .basic-select div {
+    padding: 10px 9px 10px 9px !important;
+    font-family: "Urbanist" !important;
+    font-size: 16px !important;
+    height: 20px !important;
+    /* color: white; */
+  }
+  .basic-select svg {
+    color: white;
+  }
