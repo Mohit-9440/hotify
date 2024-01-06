@@ -26,7 +26,7 @@ export default function BasicSelect({ menuItems }) {
           }}
         >
           {menuItems?.map((item) => (
-            <MenuItem key={item.value} value={item.value}>
+            <MenuItem classes={{ input: 'bg-red' }} key={item.value} value={item.value}>
               {item.title}
             </MenuItem>
           ))}
